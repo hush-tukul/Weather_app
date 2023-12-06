@@ -1,0 +1,25 @@
+from datetime import datetime
+from typing import Optional
+
+from sqlalchemy import String, false, DateTime, func
+from sqlalchemy import text, BIGINT, Boolean, true
+from sqlalchemy.orm import Mapped
+from sqlalchemy.orm import mapped_column
+
+from .base import Base, TimestampMixin, TableNameMixin
+
+
+class User(Base, TimestampMixin, TableNameMixin):
+    __tablename__ = "users"
+    user_id: Mapped[int] = mapped_column(BIGINT, primary_key=True, autoincrement=False)
+    username: Mapped[Optional[str]] = mapped_column(String(128))
+    full_name: Mapped[str] = mapped_column(String(128))
+    chat_id: Mapped[int] = mapped_column(BIGINT)
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=func.now())
+    active: Mapped[bool] = mapped_column(Boolean, server_default=true())
+    language: Mapped[str] = mapped_column(String(10), server_default=text("'en'"))
+    lang_selected: Mapped[bool] = mapped_column(Boolean, server_default=false())
+
+
+    def __repr__(self):
+        return f"<User {self.user_id} {self.username} {self.full_name}>"
