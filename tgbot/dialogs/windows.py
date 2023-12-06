@@ -103,7 +103,9 @@ def main_window():
                     items="control_buttons",
                     on_click=contracts_deleter,
                 ),
-                Back(Const("↩️ Return")),
+                SwitchTo(
+                    text=Const("Back"), id="back", state=states.Scrolls.SYNC,
+                )
             ),
             parse_mode=ParseMode.HTML,
             state=states.Scrolls.confirm_delete,
