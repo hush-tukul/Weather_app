@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$/../.." vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../../Python_learn/Minions_Bots/TrackerBot" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../Real_estate_bot" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../Restaurant_bot" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../../flask-priferiti" vcs="Git" />
+  </component>
+</project>
